@@ -1,0 +1,25 @@
+{
+  "build": "py39h2bbff1b_2",
+  "build_number": 2,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.9,<3.10.0a0",
+    "vc >=14.1,<15.0a0",
+    "vs2015_runtime >=14.16.27012,<15.0a0"
+  ],
+  "features": "",
+  "fn": "pywin32-302-py39h2bbff1b_2.conda",
+  "legacy_bz2_md5": "b057fcf6648dc5cae91c3ea4ec7ed6b2",
+  "legacy_bz2_size": 9760338,
+  "license": "HPND AND BSD-3-Clause AND LGPL-2.0",
+  "md5": "d845de24d00a63d36aa5dfa7065e6e3b",
+  "name": "pywin32",
+  "sha256": "6065f0d7076eca5e8aebdf6545ecc5e577723343e445e7e6566531d683184e7c",
+  "size": 5842696,
+  "subdir": "win-64",
+  "timestamp": 1650117290997,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/pywin32-302-py39h2bbff1b_2.conda",
+  "version": "302"
+}

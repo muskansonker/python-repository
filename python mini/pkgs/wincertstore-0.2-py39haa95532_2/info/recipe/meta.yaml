@@ -1,0 +1,43 @@
+# This file created by conda-build 3.21.5
+# meta.yaml template originally from:
+# C:\ci\containers\00003bkh04u\tmp\build\80754af9\rsync-recipes\wincertstore-0.2-python_3.9-on-winbuilder, last modified Thu Sep 30 11:19:02 2021
+# ------------------------------------------------
+
+package:
+  name: wincertstore
+  version: '0.2'
+source:
+  fn: wincertstore-0.2.zip
+  sha256: 780bd1557c9185c15d9f4221ea7f905cb20b93f7151ca8ccaed9714dce4b327a
+  url: https://pypi.io/packages/source/w/wincertstore/wincertstore-0.2.zip
+build:
+  number: '2'
+  script: C:\\ci\\wincertstore_1633019041820\\_h_env\\python.exe setup.py install
+  string: py39haa95532_2
+requirements:
+  host:
+    - ca-certificates 2021.7.5 haa95532_1
+    - openssl 1.1.1l h2bbff1b_0
+    - python 3.9.7 h6244533_1
+    - sqlite 3.36.0 h2bbff1b_0
+    - tzdata 2021a h5d7bf9c_0
+    - vc 14.2 h21ff451_1
+    - vs2015_runtime 14.27.29016 h5e58377_2
+  run:
+    - python >=3.9,<3.10.0a0
+test:
+  imports:
+    - wincertstore
+about:
+  home: https://bitbucket.org/tiran/wincertstore
+  license: PSF 2
+  license_file: LICENSE
+  summary: Python module to extract CA and CRL certs from Windows' cert store (ctypes
+    based).
+extra:
+  copy_test_source_files: true
+  final: true
+  recipe-maintainers:
+    - jakirkham
+    - ocefpaf
+    - patricksnape

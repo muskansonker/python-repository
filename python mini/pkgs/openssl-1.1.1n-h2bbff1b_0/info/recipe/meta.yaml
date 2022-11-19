@@ -1,0 +1,65 @@
+# This file created by conda-build 3.21.7
+# meta.yaml template originally from:
+# C:\ci\containers\00002ogsvon\tmp\build\80754af9\rsync-recipes\openssl-1.1.1n-on-winbuilder, last modified Fri Mar 18 03:05:56 2022
+# ------------------------------------------------
+
+package:
+  name: openssl
+  version: 1.1.1n
+source:
+  fn: openssl-1.1.1n.tar.gz
+  sha256: 40dceb51a4f6a5275bde0e6bf20ef4b91bfc32ed57c0552e2e8e15463372b17a
+  url: https://www.openssl.org/source/openssl-1.1.1n.tar.gz
+build:
+  binary_has_prefix_files: null
+  detect_binary_files_with_prefix: true
+  number: '0'
+  run_exports:
+    - openssl >=1.1.1n,<1.1.2a
+  string: h2bbff1b_0
+requirements:
+  build:
+    - m2-msys2-runtime 2.5.0.17080.65c939c 3
+    - m2-patch 2.7.5 2
+    - msys2-conda-epoch 20160418 1
+    - nasm 2.13.03 h62dcd97_1
+    - vs2015_runtime 14.27.29016 h5e58377_2
+    - vs2017_win-64 19.16.27032.1 hb4161e2_3
+    - vswhere 2.8.4 haa95532_0
+  host:
+    - perl 5.26.2.1 h0c8e037_0
+    - vc 14.2 h21ff451_1
+    - vs2015_runtime 14.27.29016 h5e58377_2
+  run:
+    - ca-certificates
+    - vc >=14.1,<15.0a0
+    - vs2015_runtime >=14.16.27012,<15.0a0
+test:
+  commands:
+    - copy NUL checksum.txt
+    - openssl sha256 checksum.txt
+    - python -c "import certifi; import ssl; import urllib.request as urlrq; urlrq.urlopen('https://pypi.org',
+      context=ssl.create_default_context(cafile=certifi.where()))"
+  requires:
+    - certifi
+    - python 3.7.*
+    - six
+about:
+  dev_url: https://github.com/openssl/openssl
+  doc_url: https://www.openssl.org/docs/man1.1.1/
+  home: https://www.openssl.org/
+  license: OpenSSL
+  license_family: Apache
+  license_file: LICENSE
+  summary: OpenSSL is an open-source implementation of the SSL and TLS protocols
+extra:
+  copy_test_source_files: true
+  final: true
+  recipe-maintainers:
+    - carlodri
+    - chenghlee
+    - jakirkham
+    - jjhelmus
+    - msarahan
+    - ocefpaf
+    - pelson

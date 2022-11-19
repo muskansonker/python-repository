@@ -1,0 +1,66 @@
+# This file created by conda-build 3.21.8
+# meta.yaml template originally from:
+# C:\ci\containers\00000qvgbqk\tmp\build\80754af9\rsync-recipes\sqlite-3.38.2-on-winbuilder, last modified Wed Mar 30 14:13:50 2022
+# ------------------------------------------------
+
+package:
+  name: sqlite
+  version: 3.38.2
+source:
+  patches:
+    - expose_symbols.patch
+  sha256: e7974aa1430bad690a5e9f79a6ee5c8492ada8269dc675875ad0fb747d7cada4
+  url: https://www.sqlite.org/2022/sqlite-autoconf-3380200.tar.gz
+build:
+  ignore_run_exports:
+    - ncurses
+  number: '0'
+  run_exports:
+    - sqlite >=3.38.2,<4.0a0
+  string: h2bbff1b_0
+requirements:
+  build:
+    - m2-msys2-runtime 2.5.0.17080.65c939c 3
+    - m2-patch 2.7.5 2
+    - msys2-conda-epoch 20160418 1
+    - vs2017_win-64 19.16.27032.1 hb4161e2_3
+    - vswhere 2.8.4 haa95532_0
+  host:
+    - vc 14.2 h21ff451_1
+    - vs2015_runtime 14.27.29016 h5e58377_2
+  run:
+    - vc >=14.1,<15.0a0
+    - vs2015_runtime >=14.16.27012,<15.0a0
+test:
+  commands:
+    - sqlite3 --version
+    - if not exist %PREFIX%\\Library\bin\sqlite3.dll exit 1
+    - if not exist %PREFIX%\\Library\lib\sqlite3.lib exit 1
+    - if not exist %PREFIX%\\Library\include\sqlite3.h exit 1
+    - if not exist %PREFIX%\\Library\include\sqlite3ext.h exit 1
+about:
+  description: 'SQLite is a self-contained, high-reliability, embedded, full-featured,
+
+    public-domain, SQL database engine. It is the most used database engine
+
+    in the world.
+
+    '
+  dev_url: https://sqlite.org/src/dir?ci=trunk
+  doc_source_url: https://github.com/mackyle/sqlite/tree/master/doc
+  doc_url: https://www.sqlite.org/docs.html
+  home: https://www.sqlite.org/
+  license: Unlicense
+  license_url: http://www.sqlite.org/copyright.html
+  summary: Implements a self-contained, zero-configuration, SQL database engine
+extra:
+  copy_test_source_files: true
+  final: true
+  recipe-maintainers:
+    - jakirkham
+    - jjhelmus
+    - mingwandroid
+    - msarahan
+    - ocefpaf
+    - snorfalorpagus
+    - xylar

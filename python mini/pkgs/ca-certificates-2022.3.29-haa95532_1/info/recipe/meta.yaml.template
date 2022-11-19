@@ -1,0 +1,42 @@
+{% set version = "2022.3.29" %}
+{% set sha256sum = "1979e7fe618c51ed1c9df43bba92f977a0d3fe7497ffa2a5e80dfc559a1e5a29" %}
+
+{% set reldate = "{:d}-{:02d}-{:02d}".format(*(version.split(".") | map("int"))) %}
+
+package:
+  name: ca-certificates
+  version: {{ version }}
+
+source:
+  # updates and sha256 published at: https://curl.haxx.se/docs/caextract.html
+  fn: cacert.pem
+  url: https://curl.haxx.se/ca/cacert-{{ reldate }}.pem
+  sha256: {{ sha256sum }}
+
+build:
+  number: 1
+
+test:
+  requires:
+    - pip
+    - curl
+  commands:
+    - pip check
+
+about:
+  home: https://github.com/conda-forge/ca-certificates-feedstock
+  license: MPL-2.0
+  license_file: LICENSE.txt
+  summary: Certificates for use with other packages.
+  doc_url: https://github.com/curl/curl/blob/master/docs/SSLCERTS.md
+
+extra:
+  recipe-maintainers:
+     - jakirkham
+     - jjhelmus
+     - msarahan
+     - mwcraig
+     - ocefpaf
+     - patricksnape
+     - pelson
+     - scopatz
