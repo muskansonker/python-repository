@@ -2,6 +2,9 @@ x=input("Enter Your Number: ")
 y=input("Enter Your Number: ")
 
 if x.isnumeric():
+# isnumeric() is the function which 
+# check the input string is numeric or string if it is 
+#numeric then it will go into loop.
     x=int(x)
 else:
     print("setting x to 0")
