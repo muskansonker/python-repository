@@ -59,7 +59,7 @@ programming.
 # ? Ques-10
 
 string2="to move to newline '\n' is used."
-print(string2)
+print(r'string2') #raw string gives as it is written in question.
 
 # ? Ques-11
 
@@ -116,10 +116,12 @@ print('#'*20)
 # ? Ques-20  ** PB
 
 #ip=input("Enter string- ")
-#if ip.isupper():
-    #print("Found")
-#else:
-    #print("no")
+#for i in ip:
+    #found=0
+#   if ip.isupper():
+        #found+=1
+        #print("Found")
+    
 
 # ? Ques-21  **PB
 
@@ -132,8 +134,8 @@ print('#'*20)
 
 # ? Ques-22   **PB
 
-text='this is some text'
-print()
+#text='this is some text'
+#print()
 
 # ? Ques-23
 
@@ -148,9 +150,9 @@ print()
 
 test='%p34@y!*-*!t68h#&on404'
 for i in test:
-    if i.isalpha():
+    if test[i].isalpha:
         print(i)
-print(test)
+
 
 
 # ? Ques-25      **PB
