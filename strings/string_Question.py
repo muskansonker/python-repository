@@ -19,52 +19,57 @@ a="Python is great"
 
 b="Python is everywhere"
 b2=b.replace(' ', '\n')
-print(b2)
+#print(b2)
 
 # ? Ques-5
 
 c="Hello World"
-print(c[::-1]) #means take -1 step from backward 
+#print(c[::-1]) #means take -1 step from backward 
 
 # ? Ques-6
 
 e="How are you?"
-print(e.upper())
+#print(e.upper())
 
 # ? Ques-7
 
 f="How Is It Going?"
-print(f.lower())
+#print(f.lower())
 
 # ? Ques-8
 
 words=['Python','is','easy','to','learn']
 for i in words:
-    print(i,end=' ')
+    #print(i,end=' ')
+# ! ALTERNATE WAY
+#sentence = ' '.join(words)
+#print(sentence)
 
 # ? Ques-9
 
-multi='''
-Python is a high-level, general-purpose
-programming language. Its design
-philosophy emphasizes code 
-readability with the use of significant indentation. 
-Python is dynamically-typed and garbage-collected. 
-It supports multiple programming paradigms, 
-including structured, object-oriented and functional 
-programming. 
-'''
+#multi='''
+#Python is a high-level, general-purpose
+#programming language. Its design
+#philosophy emphasizes code 
+#readability with the use of significant indentation. 
+#Python is dynamically-typed and garbage-collected. 
+#It supports multiple programming paradigms, 
+#including structured, object-oriented and functional 
+#programming. 
+#'''
 #print(multi)
 
 # ? Ques-10
 
-string2="to move to newline '\n' is used."
-print(r'string2') #raw string gives as it is written in question.
+#string2="to move to newline '\n' is used."
+#print(r'string2') #raw string gives as it is written in question.
+# ! ALTERNATE WAY
+#print("to move to newline '\\n' is used")
 
 # ? Ques-11
 
 var1=" the variable is 15"
-print(var1)
+#print(var1)
 
 # ? Ques-12
 
@@ -72,11 +77,11 @@ s1='Python'
 s2='is'
 s3='great'
 s4=s1+" "+s2+" "+s3
-print(s4)
+#print(s4)
 
 # ? Ques-13
 
-print('#'*20)
+#print('#'*20)
 
 # ? Ques-14
 
@@ -110,32 +115,40 @@ print('#'*20)
 
 # ? Ques-19 **PB
 
-#text="   this is not a good string   "
-#if text.startswith('   ') & text.endswith('   '):
+text="   this is not a good string   "
+text2=" "
+for i in text.split():
+    if i==' ':
+        i+1
+
     
-# ? Ques-20  ** PB
+
+    
+# ? Ques-20  **PB**
 
 #ip=input("Enter string- ")
+#found=0
 #for i in ip:
-    #found=0
-#   if ip.isupper():
+   #if ip.isupper():
         #found+=1
-        #print("Found")
+#if found:
+    #print("Found")
+    #print(f'uppercase letter occurred {found} times')
     
 
-# ? Ques-21  **PB
+# ? Ques-21  **PB**
 
 #names='Joe, David, Mark, Tom, Chris, Robert'
-#m=[]
-#for i in names:
-    #m.extend(i)
-#m=names.copy()
-#print(m)
+#list2=names.split(', ')
+#print(list2)
 
-# ? Ques-22   **PB
+# ? Ques-22   **PB**
 
 #text='this is some text'
-#print()
+#output = ''
+#for word in text.split():
+    #output += f'{word}aye '
+#print(output)
 
 # ? Ques-23
 
@@ -146,12 +159,12 @@ print('#'*20)
 #else:
     #print('Not Found "fyi"')
 
-# ? Ques-24       **PB
+# ? Ques-24       **PB**
 
 test='%p34@y!*-*!t68h#&on404'
-for i in test:
-    if test[i].isalpha:
-        print(i)
+#for i in test:
+    #if i.isalpha():
+        #print(i,end='')
 
 
 
