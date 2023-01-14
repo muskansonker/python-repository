@@ -16,7 +16,7 @@ def draw():
 
 def update():
     global b_vx #* this allows us to change the value of b_vx
-    
+
     #! loop around the screen
     square.x+=2 #* square variable will add 2(speed) or called the speed on x axis.
     if square.x>WIDTH: #* square variable on x axis is greater than width i.e., 800
