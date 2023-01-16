@@ -1,3 +1,3 @@
-from sketchpy import library as lib
+from sketchpy import library 
 myObject= library.tom_holland()
 myObject.draw()

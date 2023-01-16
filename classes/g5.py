@@ -1,13 +1,17 @@
 import pgzrun
 class Robot(Actor):
+    frame = 0
+    speed = 5
     def __init__(self, imglist, **kwargs):
         super().__init__(imglist[0])
         self.imglist=imglist
     def walk(self):
         self.imglist=self.imglist[self.frame]
         print((self.frame +1)% len(self.imglist))
-        self.frame=((self.frame+1)%len(self.imglist))
-        if self.
+        self.frame=((self.frame +1)%len(self.imglist))
+        if self.left < 0 or self.right > WIDTH:
+            self.speed = -self.speed
+        self.x += self.speed
 
 HEIGHT=400
 WIDTH=600
