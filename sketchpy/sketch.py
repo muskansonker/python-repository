@@ -1,3 +1,3 @@
 from sketchpy import library 
-myObject= library.tom_holland()
+myObject= library.apj()
 myObject.draw()
