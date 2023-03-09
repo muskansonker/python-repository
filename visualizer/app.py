@@ -19,7 +19,7 @@ st.sidebar.subheader('Data Visualizer')
 
 
 
-
+df = pd.DataFrame()
 
 #$ Load Data
 #@st.cache_data
@@ -48,8 +48,6 @@ elif selected == 'File Upload':
 #^ setup file upload
     uploaded_file=st.sidebar.file_uploader(label='Upload File in .csv or .xlsx format',type=['csv','xlsx'])
     
-    global df
-
     if uploaded_file is not None:
         st.sidebar.success('Successfully uploaded file')
         try:
@@ -74,10 +72,11 @@ elif selected == 'File Upload':
             except Exception as e:
                 print(e)
                 st.sidebar.error('Please upload a valid file')
-    global numeric_columns        
+    global numeric_columns 
+          
     try:
         st.write(df)
-        numeric_columns=list(df.select_dtypes(['float','int']).columns)
+        numeric_columns=list(df.select_dtypes(['int','float']).columns)
     except Exception as e:
         print(e)
         st.sidebar.error('Please upload the file')
@@ -102,6 +101,18 @@ elif selected == 'File Upload':
             x_values=st.sidebar.selectbox('X axis',options=numeric_columns)
             y_values=st.sidebar.selectbox('Y axis',options=numeric_columns)
             plot=px.scatter(data_frame=df,x=x_values,y=y_values) 
+            #^ display the plot
+            st.plotly_charts(plot) #! not showing graph
+
+        except Exception as e:
+            print(e)
+        
+    elif chart_select=='Line Plot':
+        st.sidebar.subheader('Line Plot Settings')
+        try:
+            x_values=st.sidebar.selectbox('X axis',options=numeric_columns)
+            y_values=st.sidebar.selectbox('Y axis',options=numeric_columns)
+            plot=px.line(data_frame=df,x=x_values,y=y_values) 
             #^ display the plot
             st.plotly_charts(plot) #! not showing graph
 
