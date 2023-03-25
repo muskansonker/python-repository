@@ -23,3 +23,4 @@ if selected == 'My Blogs':
 if selected == 'Settings':
     st.sidebar.selectbox(label='Select the option',
         options=['View Profile','Account Settings'])
+    
