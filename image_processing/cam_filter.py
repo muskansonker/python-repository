@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-#tessersct library
+#tesseract library
 cam=cv2.VideoCapture(0)
 
 while cam.isOpened():
