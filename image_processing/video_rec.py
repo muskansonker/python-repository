@@ -14,6 +14,7 @@ while cam.isOpened():
     out.write(img) #^ put the image in the video
     if cv2.waitKey(1)==27:
         break
+
 cam.release()
 out.release() #! save the video
 cv2.destroyAllWindows()
